@@ -10,6 +10,24 @@
         text-align: center;
         margin-top: 50px;
       }
+      
+      .space {
+            margin-bottom: 40px; /* Adds space below the element */
+        }
+      
+      body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .centered-elements {
+            text-align: center;
+            margin-bottom: 40px; /* Adds space below the element */
+            max-width: 100%;
+            max-height: 100%;
+        }
     </style>
   </head>
   <body>
@@ -17,13 +35,39 @@
       
       <h1>ようこそ</h1>
       
-<!--       <h1>Uber Eats!</h1> -->
+      <img class="centered-elements" src="https://github.com/dhruvvats12/dhruvvats12.github.io/raw/main/ue_icon.png" alt="Uber Eats Logo" width="100" height="100">
       
-      <img src="https://github.com/dhruvvats12/dhruvvats12.github.io/raw/main/ue_icon.png" alt="Uber Eats Logo" width="100" height="100">
+      <button class="centered-elements" onclick="copyText()">Copy Text</button>
       
-      <p>#ubereats #littlemamafesta #ウーバーイーツ #初回限定 #ママフェスタ リトル・ママフェスタに行ってきました！ Uber Eatsが最大3600円OFFになるクーポンはEATSAB23 </p>
+      <p id="textToCopy" style="display: none;">#ubereats #littlemamafesta #ウーバーイーツ #初回限定 #ママフェスタ リトル・ママフェスタに行ってきました！ Uber Eatsが最大3600円OFFになるクーポンはEATSAB23</p>
+      
+      <script>
+          function copyText() {
+            /* Get the text to be copied */
+            var text = document.getElementById("textToCopy").innerText;
 
-      <a href="https://ubereats.app.link/8hZbwMTgYab?%243p=a_custom_361342&~campaign=bd-APAC-EATSAB23&%24deeplink_path=ubereats%3A%2F%2Fpromo%2Fapply%3FpromoCode%3DEATSAB23">EATSAB23</a>
+            /* Create a temporary textarea element */
+            var tempTextarea = document.createElement("textarea");
+            tempTextarea.value = text;
+            document.body.appendChild(tempTextarea);
+
+            /* Select the text within the textarea */
+            tempTextarea.select();
+            tempTextarea.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the selected text to the clipboard */
+            document.execCommand("copy");
+
+            /* Remove the temporary textarea */
+            document.body.removeChild(tempTextarea);
+
+            /* Alert the user that the text has been copied (optional) */
+            alert("Text copied to clipboard!");
+          }
+      </script>
+
+
+      <a class="centered-elements" href="https://ubereats.app.link/8hZbwMTgYab?%243p=a_custom_361342&~campaign=bd-APAC-EATSAB23&%24deeplink_path=ubereats%3A%2F%2Fpromo%2Fapply%3FpromoCode%3DEATSAB23">EATSAB23</a>
     </div>
     
   </body>
