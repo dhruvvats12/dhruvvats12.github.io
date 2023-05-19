@@ -47,13 +47,31 @@
     <script>
         function copyText() {
             var textToCopy = "#ubereats #littlemamafesta #ウーバーイーツ #初回限定 #ママフェスタ リトル・ママフェスタに行ってきました！ Uber Eatsが最大3600円OFFになるクーポンはEATSAB23";
-            navigator.clipboard.writeText(textToCopy)
-                .then(function () {
-                    alert("Text copied to clipboard!");
-                })
-                .catch(function (error) {
-                    console.error("Unable to copy text: ", error);
-                });
+            // navigator.clipboard.writeText(textToCopy)
+            //     .then(function () {
+            //         alert("Text copied to clipboard!");
+            //     })
+            //     .catch(function (error) {
+            //         console.error("Unable to copy text: ", error);
+            //     });
+
+             /* Create a temporary textarea element */
+             var tempTextarea = document.createElement("textarea");
+            tempTextarea.value = textToCopy;
+            document.body.appendChild(tempTextarea);
+
+            /* Select the text within the textarea */
+            tempTextarea.select();
+            tempTextarea.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the selected text to the clipboard */
+            document.execCommand("copy");
+
+            /* Remove the temporary textarea */
+            document.body.removeChild(tempTextarea);
+
+            /* Alert the user that the text has been copied (optional) */
+            alert("Text copied to clipboard!");
         }
     </script>
 </head>
@@ -66,6 +84,7 @@
         <button onclick="copyText()" class="button">Copy Text</button>
         <a href="https://www.example2.com" class="button">Post on Instagram</a>
         <a href="https://www.example3.com" class="button">Post on Twitter</a>
+        <a href="https://www.example3.com" class="button">Post on Facebook</a>
         <a href="https://ubereats.app.link/8hZbwMTgYab?%243p=a_custom_361342&~campaign=bd-APAC-EATSAB23&%24deeplink_path=ubereats%3A%2F%2Fpromo%2Fapply%3FpromoCode%3DEATSAB23" class="button">Uber Eats App Link</a>
     </div>
 </body>
