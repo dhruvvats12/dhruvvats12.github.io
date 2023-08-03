@@ -89,15 +89,20 @@
         .button-container .button:last-child {
             margin-bottom: 15px;
         }
+
+        /* Custom CSS class to display text as bold */
+        .bold-text {
+            font-weight: bold;
+        }
     </style>
     <script>
         function copyText() {
             var userInput = document.getElementById("userInput").value;
-            var textToCopy = "<b>リトル・ママフェスタに行ってきました！</b> \n新規の方限定で <b>Uber Eats が最大3,600円 OFF</b>になるクーポンをもらいました！\nアプリのダウンロードは、<b>https://z.uber.com/dlamb</b> \nプロモーションコードはこちら↓ \n" + userInput;
+            var textToCopy = "リトル・ママフェスタに行ってきました！ \n新規の方限定で Uber Eats が最大3,600円 OFFになるクーポンをもらいました！\nアプリのダウンロードは、https://z.uber.com/dlamb \nプロモーションコードはこちら↓ \n" + userInput;
 
             /* Create a temporary textarea element */
             var tempTextarea = document.createElement("textarea");
-            tempTextarea.innerHTML = textToCopy;
+            tempTextarea.value = textToCopy;
             document.body.appendChild(tempTextarea);
 
             /* Select the text within the textarea */
