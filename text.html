@@ -31,10 +31,12 @@
             margin-top: 20px;
             display: flex;
             align-items: center;
+            /*margin-bottom: 20px; */
         }
 
         .button-container {
             display: flex;
+            text-align: center;
             flex-direction: column;
             align-items: center;
             margin-top: 20px;
@@ -56,7 +58,7 @@
 
             var userInput = document.getElementById("userInput").value;
 
-            var textToCopy = "リトル・ママフェスタに行ってきました！ \n新規の方限定で Uber Eats が最大3,600円 OFFになるクーポンをもらいました！\nアプリのダウンロードは、https://z.uber.com/dlamb \nプロモーションコードはこちら↓ \nTABE ";
+            var textToCopy = "リトル・ママフェスタに行ってきました！ \n新規の方限定で Uber Eats が最大3,600円 OFFになるクーポンをもらいました！\nアプリのダウンロードは、https://z.uber.com/dlamb \nプロモーションコードはこちら↓ \n" + userInput;
             
              /* Create a temporary textarea element */
              var tempTextarea = document.createElement("textarea");
@@ -83,16 +85,21 @@
 
     <img src="https://github.com/dhruvvats12/dhruvvats12.github.io/raw/main/ue_icon.png" alt="Uber Eats Logo" class="centered-image" width="100" height="100">
 
-    <label for="userInput">Please enter your Ambassador Promo Code:</label>
-    <input type="text" id="userInput">
-    <button onclick="saveInput()">Save Input</button>
-
     <div class="button-container">
-        <button onclick="copyText()" class="button" style="text-decoration: none; background-color: #007bff; border: 3px solid #1010105c; border-radius: 5px; font-weight: bold; margin: 12px;">Copy Content</button>
-        <a href="https://www.instagram.com/" class="button">Post on Instagram</a>
-        <a href="https://twitter.com/compose/tweet" class="button">Post on Twitter</a>
-        <a href="https://www.facebook.com/" class="button">Post on Facebook</a>
-        <a href="https://ubereats.app.link/8hZbwMTgYab?%243p=a_custom_361342&~campaign=bd-APAC-EATSAB23&%24deeplink_path=ubereats%3A%2F%2Fpromo%2Fapply%3FpromoCode%3DEATSAB23" class="button">Uber Eats App Link</a>
+        
+        <label for="userInput" style="font-size: 16px; margin-bottom: 10px; margin-top: 10px">「アンバサダープロモーションコード」をこちらに入力してください:</label>
+        <input type="text" id="userInput">
+        
+        <button onclick="copyText()" class="button" style="text-decoration: none; background-color: #007bff; border: 3px solid #1010105c; border-radius: 5px; font-weight: bold; margin: 12px; margin-top:15px;">投稿用の文章をコピーする</button>
+        
+        <a href="line://ti/p/@line_official" class="button">LINEでシェアする</a>
+        
+        <!--<a href="https://wa.me/" class="button">Share on WhatsApp</a>-->
+        
+        <a href="https://www.instagram.com/" class="button">Instagram に投稿する</a>
+        <a href="https://twitter.com/compose/tweet" class="button">Twitter に投稿する</a>
+        <a href="https://www.facebook.com/" class="button">Facebook に投稿する</a>
+        <!--<a href="https://ubereats.app.link/8hZbwMTgYab?%243p=a_custom_361342&~campaign=bd-APAC-EATSAB23&%24deeplink_path=ubereats%3A%2F%2Fpromo%2Fapply%3FpromoCode%3DEATSAB23" class="button">Uber Eats App Link</a>-->
     </div>
 </body>
 </html>
