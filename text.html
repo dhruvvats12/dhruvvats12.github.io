@@ -14,13 +14,16 @@
             width: 100%;
             max-width: 100%;
             padding: 0;
-            white-space: pre;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
         }
 
         h1 {
-            font-size: 30px;
+            font-size: 24px;
             font-weight: bold;
             text-align: center;
+            margin-bottom: 10px;
+            color: #333;
         }
 
         .centered-image {
@@ -29,9 +32,6 @@
             max-width: 100%;
             height: auto;
             margin-top: 20px;
-            display: flex;
-            align-items: center;
-            /*margin-bottom: 20px; */
         }
 
         .button-container {
@@ -42,27 +42,62 @@
             margin-top: 20px;
         }
 
+        .input-container {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-container label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .input-container input {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+            max-width: 100%;
+        }
+
         .button {
             display: inline-block;
             padding: 10px 20px;
             text-decoration: none;
-            background-color: #007bff;
-            color: #fff;
+            background-color: #06C167; /* Uber Eats green background color */
+            color: #000000; /* Uber Eats black font color */
             border-radius: 4px;
-            margin: 3px;
+            margin: 8px;
+            font-size: 18px; /* Slightly larger font size for mobile view */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .button-container .button:first-child {
+            margin-top: 15px;
+        }
+
+        .button-container .button:last-child {
+            margin-bottom: 15px;
         }
     </style>
     <script>
         function copyText() {
-            // var textToCopy = "#ubereats #littlemamafesta #ウーバーイーツ #初回限定 #ママフェスタ リトル・ママフェスタに行ってきました！ Uber Eatsが最大3600円OFFになるクーポンはEATSAB23";
-
             var userInput = document.getElementById("userInput").value;
+            var textToCopy = "<b>リトル・ママフェスタに行ってきました！</b> \n新規の方限定で <b>Uber Eats が最大3,600円 OFF</b>になるクーポンをもらいました！\nアプリのダウンロードは、<b>https://z.uber.com/dlamb</b> \nプロモーションコードはこちら↓ \n" + userInput;
 
-            var textToCopy = "リトル・ママフェスタに行ってきました！ \n新規の方限定で Uber Eats が最大3,600円 OFFになるクーポンをもらいました！\nアプリのダウンロードは、https://z.uber.com/dlamb \nプロモーションコードはこちら↓ \n" + userInput;
-            
-             /* Create a temporary textarea element */
-             var tempTextarea = document.createElement("textarea");
-            tempTextarea.value = textToCopy;
+            /* Create a temporary textarea element */
+            var tempTextarea = document.createElement("textarea");
+            tempTextarea.innerHTML = textToCopy;
             document.body.appendChild(tempTextarea);
 
             /* Select the text within the textarea */
@@ -86,20 +121,16 @@
     <img src="https://github.com/dhruvvats12/dhruvvats12.github.io/raw/main/ue_icon.png" alt="Uber Eats Logo" class="centered-image" width="100" height="100">
 
     <div class="button-container">
-        
-        <label for="userInput" style="font-size: 16px; margin-bottom: 10px; margin-top: 10px">「アンバサダープロモーションコード」をこちらに入力してください:</label>
-        <input type="text" id="userInput">
-        
-        <button onclick="copyText()" class="button" style="text-decoration: none; background-color: #007bff; border: 3px solid #1010105c; border-radius: 5px; font-weight: bold; margin: 12px; margin-top:15px;">投稿用の文章をコピーする</button>
-        
+        <div class="input-container">
+            <label for="userInput">「アンバサダープロモーションコード」をこちらに入力してください:</label>
+            <input type="text" id="userInput">
+        </div>
+
+        <button onclick="copyText()" class="button">投稿用の文章をコピーする</button>
         <a href="line://ti/p/@line_official" class="button">LINEでシェアする</a>
-        
-        <!--<a href="https://wa.me/" class="button">Share on WhatsApp</a>-->
-        
         <a href="https://www.instagram.com/" class="button">Instagram に投稿する</a>
         <a href="https://twitter.com/compose/tweet" class="button">Twitter に投稿する</a>
         <a href="https://www.facebook.com/" class="button">Facebook に投稿する</a>
-        <!--<a href="https://ubereats.app.link/8hZbwMTgYab?%243p=a_custom_361342&~campaign=bd-APAC-EATSAB23&%24deeplink_path=ubereats%3A%2F%2Fpromo%2Fapply%3FpromoCode%3DEATSAB23" class="button">Uber Eats App Link</a>-->
     </div>
 </body>
 </html>
